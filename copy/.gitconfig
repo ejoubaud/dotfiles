@@ -1,0 +1,10 @@
+[user]
+	name = ejoubaud
+	email = emmanuel.joubaud@gmail.com
+[http]
+	proxy = 
+[credential]
+	helper = osxkeychain
+[core]
+  excludesfile = ~/.gitignore_global
+
