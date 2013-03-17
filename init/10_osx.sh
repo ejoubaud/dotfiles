@@ -1,6 +1,8 @@
 # OSX-only stuff. Abort if not OSX.
 [[ "$OSTYPE" =~ ^darwin ]] || return 1
 
+RECIPES=(git tree sl lesspipe id3tool nmap git-extras htop-osx man2html ack)
+
 # Some tools look for XCode, even though they don't need it.
 # https://github.com/joyent/node/issues/3681
 # https://github.com/mxcl/homebrew/issues/10245
@@ -19,9 +21,8 @@ if [[ "$(type -P brew)" ]]; then
   brew update
 
   # Install Homebrew recipes.
-  recipes=(git tree sl lesspipe id3tool nmap git-extras htop-osx man2html)
 
-  list="$(to_install "${recipes[*]}" "$(brew list)")"
+  list="$(to_install "${RECIPES[*]}" "$(brew list)")"
   if [[ "$list" ]]; then
     e_header "Installing Homebrew recipes: $list"
     brew install $list
