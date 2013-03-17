@@ -4,3 +4,6 @@
 [submodule "link/.oh-my-zsh"]
 	path = link/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "link/.vim"]
+	path = link/.vim
+	url = https://github.com/carlhuda/janus
