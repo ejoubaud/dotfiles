@@ -1,7 +1,7 @@
 # OSX-only stuff. Abort if not OSX.
 [[ "$OSTYPE" =~ ^darwin ]] || return 1
 
-RECIPES=(git tree sl lesspipe id3tool nmap git-extras htop-osx man2html ack)
+RECIPES=(git tree sl lesspipe id3tool nmap git-extras htop-osx man2html ack hub)
 
 # Some tools look for XCode, even though they don't need it.
 # https://github.com/joyent/node/issues/3681
