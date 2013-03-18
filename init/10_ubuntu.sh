@@ -45,6 +45,7 @@ packages=(
   nmap telnet
   htop
   ack-grep
+  exuberant-ctags
 )
 
 list=()
