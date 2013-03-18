@@ -37,5 +37,22 @@ plugins=(rails3 git ruby brew bundler)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:$HOME/.dotfiles/bin:$PATH
+
+# Source all files in ~/.dotfiles/source/
+function src() {
+  if [[ "x$1" == x ]]; then
+    for file in ~/.dotfiles/source/*; do
+      source "$file"
+    done
+  else
+    source "$HOME/.dotfiles/source/$1.sh"
+  fi
+}
+
+# Run dotfiles script, then source.
+function dotfiles() {
+  ~/.dotfiles/bin/dotfiles "$@" && src
+}
+src
 
