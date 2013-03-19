@@ -217,6 +217,7 @@ fi
 
 # Switch to zsh
 chsh -s /bin/zsh
+/bin/zsh
 
 # All done!
 e_header "All done!"
