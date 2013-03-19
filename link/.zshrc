@@ -37,7 +37,7 @@ plugins=(rails3 git ruby brew bundler)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:$HOME/.dotfiles/bin:$PATH
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:$HOME/.dotfiles/bin
 
 # Source all files in ~/.dotfiles/source/
 function src() {
