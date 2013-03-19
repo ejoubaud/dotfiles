@@ -215,5 +215,8 @@ if [[ "$new_dotfiles_install" && -e "conf/firsttime_reminder.sh" ]]; then
   source "conf/firsttime_reminder.sh"
 fi
 
+# Switch to zsh
+chsh -s /bin/zsh
+
 # All done!
 e_header "All done!"
