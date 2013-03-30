@@ -1,0 +1,47 @@
+# This is the default .slate file.
+# If no ~/.slate file exists this is the file that will be used.
+
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+# Window Hints
+bind esc:cmd hint
+
+# Application bindings
+
+bind 1:ctrl focus 'Google Chrome'
+bind 2:ctrl focus 'iTerm'
+bind 3:ctrl focus 'Sublime Text 2'
+bind 4:ctrl focus 'GitHub'
+bind 5:ctrl focus 'Twitter'
+bind 6:ctrl focus 'Textual'
+bind 7:ctrl focus 'Postbox'
+bind 8:ctrl focus 'Skype'
+bind 9:ctrl focus 'Sequel Pro'
+
+# Monitor Aliases
+
+alias external-1     1920x1200
+alias plugged-laptop 1440x900
+
+# Position aliases
+
+alias 2-main      move screenOriginX+screenSizeX*0.15;screenOriginY  screenSizeX*0.85;screenSizeY      ${external-1}
+alias 2-left      move screenOriginX;screenOriginY                   screenSizeX*0.35;screenSizeY      ${external-1}
+alias 1-main      move screenOriginX+screenSizeX*0.22;screenOriginY  screenSizeX*0.78;screenSizeY      ${plugged-laptop}
+alias 1-left-up   move screenOriginX;screenOriginY                   windowSizeX;screenSizeY*0.45      ${plugged-laptop}
+alias 1-left-mid  move screenOriginX;screenOriginY+screenSizeY*0.4   windowSizeX;windowSizeY           ${plugged-laptop}
+alias 1-left-down move screenOriginX;screenOriginY+screenSizeY*0.55  screenSizeX*0.22;screenSizeY*0.45 ${plugged-laptop}
+
+#Layouts
+
+default dual-screen-envato resolutions:${external-1};${plugged-laptop}
+layout dual-screen-envato 'Google Chrome'  ${1-main}
+layout dual-screen-envato 'Sublime Text 2' ${2-main}
+layout dual-screen-envato 'iTerm'          ${2-left}
+layout dual-screen-envato 'Twitter'        ${1-left-down}
+layout dual-screen-envato 'Textual'        ${1-left-up}
+layout dual-screen-envato 'Hermes'         ${1-left-mid}
+
+bind t:ctrl;alt;cmd layout dual-screen-envato
