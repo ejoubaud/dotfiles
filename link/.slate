@@ -5,9 +5,6 @@ config defaultToCurrentScreen true
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
 
-# Window Hints
-bind esc:cmd hint
-
 # Application bindings
 
 bind 1:ctrl focus 'Google Chrome'
@@ -27,21 +24,42 @@ alias plugged-laptop 1440x900
 
 # Position aliases
 
-alias 2-main      move screenOriginX+screenSizeX*0.15;screenOriginY  screenSizeX*0.85;screenSizeY      ${external-1}
+alias 2-right-big move screenOriginX+screenSizeX*0.15;screenOriginY  screenSizeX*0.85;screenSizeY      ${external-1}
 alias 2-left      move screenOriginX;screenOriginY                   screenSizeX*0.35;screenSizeY      ${external-1}
-alias 1-main      move screenOriginX+screenSizeX*0.22;screenOriginY  screenSizeX*0.78;screenSizeY      ${plugged-laptop}
+alias 1-right-big move screenOriginX+screenSizeX*0.22;screenOriginY  screenSizeX*0.78;screenSizeY      ${plugged-laptop}
 alias 1-left-up   move screenOriginX;screenOriginY                   windowSizeX;screenSizeY*0.45      ${plugged-laptop}
 alias 1-left-mid  move screenOriginX;screenOriginY+screenSizeY*0.4   windowSizeX;windowSizeY           ${plugged-laptop}
 alias 1-left-down move screenOriginX;screenOriginY+screenSizeY*0.55  screenSizeX*0.22;screenSizeY*0.45 ${plugged-laptop}
 
-#Layouts
+alias right-half  move screenOriginX+screenSizeX*0.5;screenOriginY   screenSizeX*0.5;screenSizeY
+alias left-half   move screenOriginX;screenOriginY                   screenSizeX*0.5;screenSizeY
+alias left-down   move screenOriginX;screenOriginY+screenSizeY*0.5   screenSizeX*0.5;screenSizeY*0.5
+
+alias right-overlap move screenOriginX+screenSizeX*0.4;screenOriginY   screenSizeX*0.6;screenSizeY
+alias left-overlap  move screenOriginX;screenOriginY                   screenSizeX*0.6;screenSizeY
+
+# Layouts
 
 default dual-screen-envato resolutions:${external-1};${plugged-laptop}
-layout dual-screen-envato 'Google Chrome'  ${1-main}
-layout dual-screen-envato 'Sublime Text 2' ${2-main}
+layout dual-screen-envato 'Google Chrome'  ${1-right-big}
+layout dual-screen-envato 'Sublime Text 2' ${2-right-big}
 layout dual-screen-envato 'iTerm'          ${2-left}
 layout dual-screen-envato 'Twitter'        ${1-left-down}
 layout dual-screen-envato 'Textual'        ${1-left-up}
 layout dual-screen-envato 'Hermes'         ${1-left-mid}
+
+layout single-halves 'Google Chrome'  ${left-half}
+layout single-halves 'Sublime Text 2' ${right-half}
+layout single-halves 'iTerm'          ${left-half}
+
+layout single-overlap 'Google Chrome'  ${left-overlap}
+layout single-overlap 'Sublime Text 2' ${right-overlap}
+layout single-overlap 'iTerm'          ${left-overlap}
+
+#Layout shortcuts
+
+bind 1:cmd;esc layout dual-screen-envato
+bind 2:cmd;esc layout single-halves
+bind 3:cmd;esc layout single-overlap
 
 bind t:ctrl;alt;cmd layout dual-screen-envato
