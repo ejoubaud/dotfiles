@@ -58,8 +58,13 @@ layout single-overlap 'iTerm'          ${left-overlap}
 
 #Layout shortcuts
 
-bind 1:cmd;esc layout dual-screen-envato
-bind 2:cmd;esc layout single-halves
-bind 3:cmd;esc layout single-overlap
+alias modalk cmd;alt;/
+
+bind ,:${modalk} layout dual-screen-envato
+bind /:${modalk} layout single-halves
+bind .:${modalk} layout single-overlap
+
+bind left:${modalk} push left
+bind right:${modalk} push right
 
 bind t:ctrl;alt;cmd layout dual-screen-envato
