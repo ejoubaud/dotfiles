@@ -1,0 +1,5 @@
+--type-set=css=.scss,.sass
+--type-set=coffee=.coffee
+--type-set=tmstuff=.tmproj,.tm_build_errors
+--type-set=json=.json
+--type-set=sublime=.sublime-settings,.sublime-keymap,.sublime-macro,.sublime-mousemap
