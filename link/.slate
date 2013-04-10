@@ -24,12 +24,12 @@ alias plugged-laptop 1440x900
 
 # Position aliases
 
-alias 2-right-big move screenOriginX+screenSizeX*0.15;screenOriginY  screenSizeX*0.85;screenSizeY      ${external-1}
-alias 2-left      move screenOriginX;screenOriginY                   screenSizeX*0.35;screenSizeY      ${external-1}
-alias 1-right-big move screenOriginX+screenSizeX*0.22;screenOriginY  screenSizeX*0.78;screenSizeY      ${plugged-laptop}
-alias 1-left-up   move screenOriginX;screenOriginY                   windowSizeX;screenSizeY*0.45      ${plugged-laptop}
-alias 1-left-mid  move screenOriginX;screenOriginY+screenSizeY*0.4   windowSizeX;windowSizeY           ${plugged-laptop}
-alias 1-left-down move screenOriginX;screenOriginY+screenSizeY*0.55  screenSizeX*0.22;screenSizeY*0.45 ${plugged-laptop}
+alias 2-right-big move screenOriginX+screenSizeX*0.15;screenOriginY  screenSizeX*0.85;screenSizeY      1
+alias 2-left      move screenOriginX;screenOriginY                   screenSizeX*0.35;screenSizeY      1
+alias 1-right-big move screenOriginX+screenSizeX*0.22;screenOriginY  screenSizeX*0.78;screenSizeY      0
+alias 1-left-up   move screenOriginX;screenOriginY                   windowSizeX;screenSizeY*0.45      0
+alias 1-left-mid  move screenOriginX;screenOriginY+screenSizeY*0.4   windowSizeX;windowSizeY           0
+alias 1-left-down move screenOriginX;screenOriginY+screenSizeY*0.55  screenSizeX*0.22;screenSizeY*0.45 0
 
 alias right-half  move screenOriginX+screenSizeX*0.5;screenOriginY   screenSizeX*0.5;screenSizeY
 alias left-half   move screenOriginX;screenOriginY                   screenSizeX*0.5;screenSizeY
