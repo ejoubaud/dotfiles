@@ -4,5 +4,5 @@
 [[ "$OSTYPE" =~ ^darwin ]] || return 1
 
 # node
-path+=/Users/ejoubaud/node_modules/.bin
+path+=$HOME/node_modules/.bin
 
