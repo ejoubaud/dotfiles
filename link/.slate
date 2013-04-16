@@ -13,7 +13,7 @@ bind 3:ctrl focus 'Sublime Text 2'
 bind 4:ctrl focus 'GitHub'
 bind 5:ctrl focus 'Twitter'
 bind 6:ctrl focus 'Textual'
-bind 7:ctrl focus 'Postbox'
+bind 7:ctrl focus 'Mail'
 bind 8:ctrl focus 'Skype'
 bind 9:ctrl focus 'Sequel Pro'
 
@@ -28,7 +28,7 @@ alias 2-right-big move screenOriginX+screenSizeX*0.15;screenOriginY  screenSizeX
 alias 2-left      move screenOriginX;screenOriginY                   screenSizeX*0.35;screenSizeY      1
 alias 1-right-big move screenOriginX+screenSizeX*0.22;screenOriginY  screenSizeX*0.78;screenSizeY      0
 alias 1-left-up   move screenOriginX;screenOriginY                   windowSizeX;screenSizeY*0.45      0
-alias 1-left-mid  move screenOriginX;screenOriginY+screenSizeY*0.4   windowSizeX;windowSizeY           0
+alias 1-left-mid  move screenOriginX;screenOriginY+screenSizeY*0.42  windowSizeX;windowSizeY           0
 alias 1-left-down move screenOriginX;screenOriginY+screenSizeY*0.55  screenSizeX*0.22;screenSizeY*0.45 0
 
 alias right-half  move screenOriginX+screenSizeX*0.5;screenOriginY   screenSizeX*0.5;screenSizeY
