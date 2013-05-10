@@ -12,7 +12,7 @@ bind 2:ctrl focus 'iTerm'
 bind 3:ctrl focus 'Sublime Text 2'
 bind 4:ctrl focus 'GitHub'
 bind 5:ctrl focus 'Twitter'
-bind 6:ctrl focus 'Textual'
+bind 6:ctrl focus 'LimeChat'
 bind 7:ctrl focus 'Mail'
 bind 8:ctrl focus 'Skype'
 bind 9:ctrl focus 'Sequel Pro'
@@ -27,7 +27,7 @@ alias plugged-laptop 1440x900
 alias 2-right-big move screenOriginX+screenSizeX*0.15;screenOriginY  screenSizeX*0.85;screenSizeY      1
 alias 2-left      move screenOriginX;screenOriginY                   screenSizeX*0.35;screenSizeY      1
 alias 1-right-big move screenOriginX+screenSizeX*0.22;screenOriginY  screenSizeX*0.78;screenSizeY      0
-alias 1-left-up   move screenOriginX;screenOriginY                   windowSizeX;screenSizeY*0.45      0
+alias 1-left-up   move screenOriginX;screenOriginY                   screenSizeX*0.4;screenSizeY*0.45  0
 alias 1-left-mid  move screenOriginX;screenOriginY+screenSizeY*0.42  windowSizeX;windowSizeY           0
 alias 1-left-down move screenOriginX;screenOriginY+screenSizeY*0.55  screenSizeX*0.22;screenSizeY*0.45 0
 
@@ -45,7 +45,7 @@ layout dual-screen-envato 'Google Chrome'  ${1-right-big}
 layout dual-screen-envato 'Sublime Text 2' ${2-right-big}
 layout dual-screen-envato 'iTerm'          ${2-left}
 layout dual-screen-envato 'Twitter'        ${1-left-down}
-layout dual-screen-envato 'Textual'        ${1-left-up}
+layout dual-screen-envato 'LimeChat'       ${1-left-up}
 layout dual-screen-envato 'Hermes'         ${1-left-mid}
 
 layout single-halves 'Google Chrome'  ${left-half}
