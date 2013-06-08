@@ -9,5 +9,5 @@ alias gbw="git build-without-master"
 alias pr="touch ~/.pow/restart.txt"
 
 # Bundler (Undo harmful from oh-my-zsh)
-unalias zeus
+alias zeus && unalias zeus
 
