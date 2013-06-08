@@ -5,4 +5,3 @@
 
 # node
 path+=$HOME/node_modules/.bin
-
