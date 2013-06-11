@@ -27,7 +27,6 @@
 #package management formats
 *.dmg
 *.xpi
-*.gem
 *.egg
 *.deb
 *.rpm
