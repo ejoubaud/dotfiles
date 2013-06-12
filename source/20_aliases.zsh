@@ -14,4 +14,3 @@ alias zeus > /dev/null && unalias zeus
 
 # Rails
 alias rdm='rake db:migrate && rake db:test:prepare'
-
