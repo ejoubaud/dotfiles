@@ -9,7 +9,7 @@ config resizePercentOf screenSize
 
 bind 1:ctrl focus 'Google Chrome'
 bind 2:ctrl focus 'iTerm'
-bind 3:ctrl focus 'Sublime Text 2'
+bind 3:ctrl focus 'Sublime Text'
 bind 4:ctrl focus 'GitHub'
 bind 5:ctrl focus 'Twitter'
 bind 6:ctrl focus 'LimeChat'
@@ -42,18 +42,18 @@ alias left-overlap  move screenOriginX;screenOriginY                   screenSiz
 
 default dual-screen-envato resolutions:${external-1};${plugged-laptop}
 layout dual-screen-envato 'Google Chrome'  ${1-right-big}
-layout dual-screen-envato 'Sublime Text 2' ${2-right-big}
+layout dual-screen-envato 'Sublime Text' ${2-right-big}
 layout dual-screen-envato 'iTerm'          ${2-left}
 layout dual-screen-envato 'Twitter'        ${1-left-down}
 layout dual-screen-envato 'LimeChat'       ${1-left-up}
 layout dual-screen-envato 'Hermes'         ${1-left-mid}
 
 layout single-halves 'Google Chrome'  ${left-half}
-layout single-halves 'Sublime Text 2' ${right-half}
+layout single-halves 'Sublime Text' ${right-half}
 layout single-halves 'iTerm'          ${left-half}
 
 layout single-overlap 'Google Chrome'  ${left-overlap}
-layout single-overlap 'Sublime Text 2' ${right-overlap}
+layout single-overlap 'Sublime Text' ${right-overlap}
 layout single-overlap 'iTerm'          ${left-overlap}
 
 #Layout shortcuts
