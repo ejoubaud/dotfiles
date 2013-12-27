@@ -21,3 +21,7 @@ alias zc='zeus console'
 alias zs='zeus start'
 alias z='zeus'
 
+# Quick look
+
+alias ql='qlmanage -p "$@" >& /dev/null'
+
