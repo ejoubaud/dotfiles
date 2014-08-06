@@ -6,6 +6,6 @@
 # --- Aliases ---
 
 # Start an upgraded rails on master
-alias rs="git checkout master && git smart-pull && (bundle install --local) && rake db:migrate && bundle exec foreman start web"
+alias sr="git checkout master && git smart-pull && (bundle install --local) && rake db:migrate && bundle exec foreman start web"
 
 
