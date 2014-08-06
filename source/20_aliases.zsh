@@ -22,6 +22,8 @@ alias zs='zeus start'
 alias z='zeus'
 
 # Quick look
-
 alias ql='qlmanage -p "$@" >& /dev/null'
+
+# SSH config
+alias ssh_config='subl3 ~/.ssh/config'
 
