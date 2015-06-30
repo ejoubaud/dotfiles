@@ -12,7 +12,3 @@ alias sr="git checkout master && git smart-pull && (bundle install --local) && b
 # Needed for AWS auto-scaling
 export AWS_AUTO_SCALING_HOME="/opt/boxen/homebrew/Cellar/auto-scaling/1.0.61.6/libexec"
 export JAVA_HOME="`/usr/libexec/java_home`"
-
-# AWSAccessKeyId and AWSSecetKey should be defined in there
-export AWS_CREDENTIAL_FILE="$HOME/.awscredentials"
-
