@@ -1,8 +1,3 @@
-let mapleader = ","
-
-" Remap Escape character
-inoremap jj <ESC>
-
 "
 " Config from http://vim.wikia.com/wiki/Example_vimrc
 "
@@ -152,3 +147,13 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
+
+
+"------------------------------------------------------------
+" My own setup
+"
+let mapleader = ","
+
+" Remap Escape character
+inoremap jj <ESC>
+
