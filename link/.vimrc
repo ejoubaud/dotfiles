@@ -1,3 +1,20 @@
+"------------------------------------------------------------
+" vim-plug setup
+"
+call plug#begin('~/.vim/plugged')
+
+Plug 'kchmck/vim-coffee-script'
+Plug 'derekwyatt/vim-scala'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+" To consider for later
+" Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-rails'
+" Plug 'wincent/command-t'
+
+" Add plugins to &runtimepath
+call plug#end()
+
 "
 " Config from http://vim.wikia.com/wiki/Example_vimrc
 "
@@ -6,10 +23,6 @@
 "
 " These options and commands enable some very useful features in Vim, that
 " no user should have to live without.
- 
-" Set 'nocompatible' to ward off unexpected things that your distro might
-" have made, as well as sanely reset options when re-sourcing .vimrc
-set nocompatible
  
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
