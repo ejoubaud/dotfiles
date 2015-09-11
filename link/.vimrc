@@ -8,6 +8,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'altercation/vim-colors-solarized'
 Plug 'kien/ctrlp.vim'
+Plug 'rking/ag.vim'
 " To consider for later
 " Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-rails'
