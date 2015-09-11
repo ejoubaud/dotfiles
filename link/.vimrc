@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
+Plug 'altercation/vim-colors-solarized'
 " To consider for later
 " Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-rails'
@@ -168,4 +169,7 @@ let mapleader = ","
 
 " Remap Escape character
 inoremap jj <ESC>
+
+" Theme
+colorscheme solarized
 
