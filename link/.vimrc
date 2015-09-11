@@ -3,14 +3,17 @@
 "
 call plug#begin('~/.vim/plugged')
 
-Plug 'kchmck/vim-coffee-script'
-Plug 'derekwyatt/vim-scala'
+Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'altercation/vim-colors-solarized'
+Plug 'unblevable/quick-scope'
+Plug 'kien/ctrlp.vim'
+Plug 'rking/ag.vim'
 " To consider for later
 " Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-rails'
-" Plug 'wincent/command-t'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -170,3 +173,8 @@ let mapleader = ","
 " Remap Escape character
 inoremap jj <ESC>
 
+" Theme
+colorscheme solarized
+
+" Show dotfiles in ctrlp
+let g:ctrlp_show_hidden = 1
