@@ -3,8 +3,7 @@
 "
 call plug#begin('~/.vim/plugged')
 
-Plug 'kchmck/vim-coffee-script'
-Plug 'derekwyatt/vim-scala'
+Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 " To consider for later
