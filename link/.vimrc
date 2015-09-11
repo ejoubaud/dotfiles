@@ -7,6 +7,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'altercation/vim-colors-solarized'
+Plug 'unblevable/quick-scope'
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 " To consider for later
