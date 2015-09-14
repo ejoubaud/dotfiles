@@ -12,6 +12,7 @@ Plug 'unblevable/quick-scope'
 Plug 'kien/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'rking/ag.vim'
+Plug 'vim-scripts/ZoomWin'
 " To consider for later
 " Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-rails'
