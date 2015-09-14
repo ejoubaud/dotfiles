@@ -10,9 +10,13 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'altercation/vim-colors-solarized'
 Plug 'unblevable/quick-scope'
 Plug 'kien/ctrlp.vim'
+Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'rking/ag.vim'
+Plug 'vim-scripts/ZoomWin'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'itchyny/lightline.vim'
 " To consider for later
-" Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-rails'
 
 " Add plugins to &runtimepath
@@ -83,10 +87,6 @@ set hlsearch
 " change Vim's behaviour in ways which deviate from the true Vi way, but
 " which are considered to add usability. Which, if any, of these options to
 " use is very much a personal preference, but they are harmless.
-
-" Use case insensitive search, except when using capital letters
-set ignorecase
-set smartcase
 
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
@@ -172,9 +172,51 @@ let mapleader = ","
 
 " Remap Escape character
 inoremap jj <ESC>
+noremap <C-S-k> :m-2<CR>==
+noremap <C-S-j> :m+<CR>==
 
 " Theme
 colorscheme solarized
 
 " Show dotfiles in ctrlp
 let g:ctrlp_show_hidden = 1
+
+" Use case insensitive search, even with capital letters (because it's used by
+" CtrlP and messes with CamelCase searches)
+set ignorecase
+set nosmartcase
+" Turn Class::Name into Class/Name into ctrlp search
+let g:ctrlp_abbrev = {
+  \ 'gmode': 'i',
+  \ 'abbrevs': [
+    \ {
+      \ 'pattern': '::',
+      \ 'expanded': '/',
+      \ 'mode': 'pfrz',
+    \ },
+  \ ]
+\ }
+" Enable Python matcher for CtrlP
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
+" Lightline config
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"x":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '|', 'right': '|' }
+\ }
+
