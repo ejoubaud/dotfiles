@@ -84,10 +84,6 @@ set hlsearch
 " which are considered to add usability. Which, if any, of these options to
 " use is very much a personal preference, but they are harmless.
 
-" Use case insensitive search, except when using capital letters
-set ignorecase
-set smartcase
-
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
 
@@ -178,3 +174,19 @@ colorscheme solarized
 
 " Show dotfiles in ctrlp
 let g:ctrlp_show_hidden = 1
+
+" Use case insensitive search, even with capital letters (because it's used by
+" CtrlP and messes with CamelCase searches)
+set ignorecase
+set nosmartcase
+" Turn Class::Name into Class/Name into ctrlp search
+let g:ctrlp_abbrev = {
+  \ 'gmode': 'i',
+  \ 'abbrevs': [
+    \ {
+      \ 'pattern': '::',
+      \ 'expanded': '/',
+      \ 'mode': 'pfrz',
+    \ },
+  \ ]
+\ }
