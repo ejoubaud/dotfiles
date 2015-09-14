@@ -13,6 +13,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'rking/ag.vim'
 Plug 'vim-scripts/ZoomWin'
+Plug 'tpope/vim-commentary'
 " To consider for later
 " Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-rails'
