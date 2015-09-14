@@ -171,6 +171,8 @@ let mapleader = ","
 
 " Remap Escape character
 inoremap jj <ESC>
+noremap <C-S-k> :m-2<CR>==
+noremap <C-S-j> :m+<CR>==
 
 " Theme
 colorscheme solarized
