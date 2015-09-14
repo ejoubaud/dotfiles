@@ -10,6 +10,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'altercation/vim-colors-solarized'
 Plug 'unblevable/quick-scope'
 Plug 'kien/ctrlp.vim'
+Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'rking/ag.vim'
 " To consider for later
 " Plug 'tpope/vim-fugitive'
@@ -190,3 +191,6 @@ let g:ctrlp_abbrev = {
     \ },
   \ ]
 \ }
+" Enable Python matcher for CtrlP
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
