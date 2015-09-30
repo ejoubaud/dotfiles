@@ -200,6 +200,8 @@ let g:ctrlp_abbrev = {
 " Fix missing files in ctrlp
 let g:ctrlp_max_files=0
 let g:ctrlp_match_window = 'results:200'
+" Faster ctrlp with Ag
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 " Enable Python matcher for CtrlP
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
