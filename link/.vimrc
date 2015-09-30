@@ -171,13 +171,16 @@ nnoremap <C-L> :nohl<CR><C-L>
 "
 let mapleader = ","
 
+" Theme
+set background=dark
+let g:solarized_termtrans = 1
+colorscheme solarized
+
 " Remap Escape character
 inoremap jj <ESC>
 noremap <C-S-k> :m-2<CR>==
 noremap <C-S-j> :m+<CR>==
 
-" Theme
-colorscheme solarized
 
 " Show dotfiles in ctrlp
 let g:ctrlp_show_hidden = 1
