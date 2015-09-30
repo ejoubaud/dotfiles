@@ -204,6 +204,8 @@ let g:ctrlp_match_window = 'results:200'
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 " Enable Python matcher for CtrlP
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+" Set root to gem root when browsing a ruby gem
+let g:ctrlp_root_markers = [ '*.gemspec' ]
 
 " Ack/Ag config
 if executable('ag')
