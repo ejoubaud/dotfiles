@@ -196,6 +196,9 @@ let g:ctrlp_abbrev = {
     \ },
   \ ]
 \ }
+" Fix missing files in ctrlp
+let g:ctrlp_max_files=0
+let g:ctrlp_match_window = 'results:200'
 " Enable Python matcher for CtrlP
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
