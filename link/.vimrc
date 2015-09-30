@@ -175,6 +175,9 @@ let mapleader = ","
 set background=dark
 let g:solarized_termtrans = 1
 colorscheme solarized
+set cursorline
+set cursorcolumn
+
 
 " Remap Escape character
 inoremap jj <ESC>
