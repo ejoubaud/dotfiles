@@ -183,8 +183,6 @@ set helpheight=99999
 
 " Remap Escape character
 inoremap jj <ESC>
-noremap <C-S-k> :m-2<CR>==
-noremap <C-S-j> :m+<CR>==
 
 
 " Show dotfiles in ctrlp
