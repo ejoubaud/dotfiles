@@ -178,6 +178,8 @@ colorscheme solarized
 set cursorline
 set cursorcolumn
 
+" Full-screen help
+set helpheight=99999
 
 " Remap Escape character
 inoremap jj <ESC>
