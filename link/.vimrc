@@ -11,7 +11,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'unblevable/quick-scope'
 Plug 'kien/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -219,4 +219,9 @@ let g:lightline = {
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '|', 'right': '|' }
 \ }
+
+" Ack/Ag config
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
