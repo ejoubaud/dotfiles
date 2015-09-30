@@ -16,6 +16,7 @@ Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'bling/vim-airline'
+Plug 'sk1418/QFGrep'
 " To consider for later
 " Plug 'tpope/vim-rails'
 
