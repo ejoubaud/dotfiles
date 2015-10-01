@@ -11,11 +11,13 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'unblevable/quick-scope'
 Plug 'kien/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-eunuch'
+Plug 'bling/vim-airline'
+Plug 'sk1418/QFGrep'
 " To consider for later
 " Plug 'tpope/vim-rails'
 
@@ -170,13 +172,19 @@ nnoremap <C-L> :nohl<CR><C-L>
 "
 let mapleader = ","
 
+" Theme
+set background=dark
+let g:solarized_termtrans = 1
+colorscheme solarized
+set cursorline
+set cursorcolumn
+
+" Full-screen help
+set helpheight=99999
+
 " Remap Escape character
 inoremap jj <ESC>
-noremap <C-S-k> :m-2<CR>==
-noremap <C-S-j> :m+<CR>==
 
-" Theme
-colorscheme solarized
 
 " Show dotfiles in ctrlp
 let g:ctrlp_show_hidden = 1
@@ -196,27 +204,25 @@ let g:ctrlp_abbrev = {
     \ },
   \ ]
 \ }
+" Fix missing files in ctrlp
+let g:ctrlp_max_files=0
+let g:ctrlp_match_window = 'results:200'
+" Faster ctrlp with Ag
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 " Enable Python matcher for CtrlP
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+" Set root to gem root when browsing a ruby gem
+let g:ctrlp_root_markers = [ '*.gemspec' ]
 
-" Lightline config
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"x":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '|', 'right': '|' }
-\ }
+" Ack/Ag config
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
+" Airline config
+let g:airline_theme = 'bubblegum'
+" Show buffers at the top
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#buffer_min_count = 3
