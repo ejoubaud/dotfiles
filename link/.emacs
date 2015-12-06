@@ -28,3 +28,6 @@
 (tool-bar-mode -1)
 ; Show line numbers
 (global-linum-mode 1)
+
+; Disable warning on opening symlinks to version-controlled files
+(setq vc-follow-symlinks t)
