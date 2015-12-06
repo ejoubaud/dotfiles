@@ -7,7 +7,8 @@
 
 ;; Add packages here
 (defvar packages-to-install
-  '(evil))
+  '(evil
+    zenburn-theme))
 
 (package-initialize)
 
@@ -17,3 +18,6 @@
 (dolist (package-name packages-to-install)
   (unless (package-installed-p package-name)
     (package-install package-name)))
+
+; Set theme
+(load-theme 'zenburn t)
