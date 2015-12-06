@@ -26,3 +26,5 @@
 (xterm-mouse-mode 1)
 ; Hide the toolbar
 (tool-bar-mode -1)
+; Show line numbers
+(global-linum-mode 1)
