@@ -21,3 +21,6 @@
 
 ; Set theme
 (load-theme 'zenburn t)
+
+; Enable mouse in terminal
+(xterm-mouse-mode 1)
