@@ -24,3 +24,5 @@
 
 ; Enable mouse in terminal
 (xterm-mouse-mode 1)
+; Hide the toolbar
+(tool-bar-mode -1)
