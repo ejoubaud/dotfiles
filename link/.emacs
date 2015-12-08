@@ -8,6 +8,9 @@
 ;; Add packages here
 (defvar packages-to-install
   '(evil
+    projectile
+    helm
+    helm-projectile
     zenburn-theme))
 
 (package-initialize)
@@ -31,3 +34,10 @@
 
 ; Disable warning on opening symlinks to version-controlled files
 (setq vc-follow-symlinks t)
+
+; Helm
+(helm-mode 1)
+
+; Projectile
+(projectile-global-mode)
+(helm-projectile-on)
