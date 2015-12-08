@@ -8,6 +8,7 @@
 ;; Add packages here
 (defvar packages-to-install
   '(evil
+    helm
     zenburn-theme))
 
 (package-initialize)
@@ -31,3 +32,6 @@
 
 ; Disable warning on opening symlinks to version-controlled files
 (setq vc-follow-symlinks t)
+
+; Helm
+(helm-mode 1)
