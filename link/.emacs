@@ -8,6 +8,7 @@
 ;; Add packages here
 (defvar packages-to-install
   '(evil
+    projectile
     helm
     zenburn-theme))
 
@@ -35,3 +36,6 @@
 
 ; Helm
 (helm-mode 1)
+
+; Projectile
+(projectile-global-mode)
