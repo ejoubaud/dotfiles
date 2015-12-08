@@ -10,6 +10,7 @@
   '(evil
     projectile
     helm
+    helm-projectile
     zenburn-theme))
 
 (package-initialize)
@@ -39,3 +40,4 @@
 
 ; Projectile
 (projectile-global-mode)
+(helm-projectile-on)
