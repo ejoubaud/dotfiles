@@ -220,6 +220,9 @@ if executable('ag')
 endif
 " Quit auto-opening first result on search
 cabbrev Ack Ack!
+" Close results when browsing one
+let g:ack_autoclose = 1
+noremap <Leader>a :call ack#ShowResults()<CR>
 
 " Airline config
 " Show buffers at the top
