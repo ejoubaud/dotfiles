@@ -218,6 +218,10 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " Set root to gem root when browsing a ruby gem
 let g:ctrlp_root_markers = [ '*.gemspec' ]
+" Fix <A-BS> closing Ctrlp prompt
+let g:ctrlp_prompt_mappings = {
+  \ 'PrtDeleteWord()':      ['<Esc><BS>', '<c-w>'],
+\ }
 
 " Ack/Ag config
 if executable('ag')
