@@ -37,6 +37,9 @@
 
 ; Helm
 (helm-mode 1)
+; Enable fuzzy match in M-x
+(global-set-key (kbd "M-x") 'helm-M-x)
+(setq helm-M-x-fuzzy-match t)
 
 ; Projectile
 (projectile-global-mode)
