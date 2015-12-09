@@ -182,6 +182,11 @@ set cursorcolumn
 " Full-screen help
 set helpheight=99999
 
+" Fix deleting words with <A-BS> when terminal has Alt send Escape sequence
+" Without this, it exists normal or console mode
+inoremap <Esc><BS> <C-w>
+cnoremap <Esc><BS> <C-w>
+
 " Remap Escape character
 inoremap jj <ESC>
 
