@@ -218,6 +218,8 @@ let g:ctrlp_root_markers = [ '*.gemspec' ]
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+" Quit auto-opening first result on search
+cabbrev Ack Ack!
 
 " Airline config
 " Show buffers at the top
