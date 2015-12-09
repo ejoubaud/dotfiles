@@ -182,6 +182,11 @@ set cursorcolumn
 " Full-screen help
 set helpheight=99999
 
+" Fix deleting words with <A-BS> when terminal has Alt send Escape sequence
+" Without this, it exists normal or console mode
+inoremap <Esc><BS> <C-w>
+cnoremap <Esc><BS> <C-w>
+
 " Remap Escape character
 inoremap jj <ESC>
 
@@ -218,6 +223,11 @@ let g:ctrlp_root_markers = [ '*.gemspec' ]
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+" Quit auto-opening first result on search
+cabbrev Ack Ack!
+" Close results when browsing one
+let g:ack_autoclose = 1
+noremap <Leader>a :call ack#ShowResults()<CR>
 
 " Airline config
 " Show buffers at the top
