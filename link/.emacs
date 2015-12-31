@@ -12,6 +12,7 @@
     helm
     helm-projectile
     magit
+    terraform-mode
     zenburn-theme))
 
 (package-initialize)
