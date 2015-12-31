@@ -12,6 +12,7 @@
     helm
     helm-projectile
     magit
+    puppet-mode
     terraform-mode
     zenburn-theme))
 
