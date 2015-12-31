@@ -184,6 +184,19 @@ set cursorcolumn
 " Full-screen help
 set helpheight=99999
 
+" Emacs shortcuts in VIM command mode (ex)
+cnoremap <C-a>  <Home>
+cnoremap <C-b>  <Left>
+cnoremap <C-f>  <Right>
+cnoremap <C-d>  <Delete>
+cnoremap <M-b>  <S-Left>
+cnoremap <M-f>  <S-Right>
+cnoremap <M-d>  <S-right><Delete>
+cnoremap <C-g>  <C-c>
+cnoremap <ESC>b <S-Left>
+cnoremap <ESC>f <S-Right>
+cnoremap <ESC>d <S-right><Delete>
+
 " Fix deleting words with <A-BS> when terminal has Alt send Escape sequence
 " Without this, it exists normal or console mode
 inoremap <Esc><BS> <C-w>
