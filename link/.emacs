@@ -14,6 +14,7 @@
     magit
     puppet-mode
     terraform-mode
+    yaml-mode
     zenburn-theme))
 
 (package-initialize)
