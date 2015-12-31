@@ -194,14 +194,24 @@ cnoremap <M-b>  <S-Left>
 cnoremap <M-f>  <S-Right>
 cnoremap <M-d>  <S-right><Delete>
 cnoremap <C-g>  <C-c>
-cnoremap <ESC>b <S-Left>
-cnoremap <ESC>f <S-Right>
-cnoremap <ESC>d <S-right><Delete>
+" Emacs shortcuts for <A-b> (back one word), <A-f> (forward one word) 
+" and <A-d> (delete next word) in VIM command mode (ex)
+" Works only in terms that has Alt send Escape sequence
+" see http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
+" for why the <F13> hack. Keeps Esc from waiting for other keys to close ex
+set <F13>=b
+set <F14>=f
+set <F15>=d
+cnoremap <F13> <S-Left>
+cnoremap <F14> <S-Right>
+cnoremap <F15> <S-right><Delete>
 
 " Fix deleting words with <A-BS> when terminal has Alt send Escape sequence
-" Without this, it exists normal or console mode
-inoremap <Esc><BS> <C-w>
-cnoremap <Esc><BS> <C-w>
+" see http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
+" for why the <F16> hack. Keeps Esc from waiting for other keys to close ex.
+set <F16>=
+inoremap <F16> <C-w>
+cnoremap <F16> <C-w>
 
 " Remap Escape character
 inoremap jj <ESC>
