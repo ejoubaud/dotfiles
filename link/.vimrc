@@ -253,8 +253,11 @@ let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " Set root to gem root when browsing a ruby gem
 let g:ctrlp_root_markers = [ '*.gemspec' ]
 " Fix <A-BS> closing Ctrlp prompt
+" The <F16> stands for <Esc><BS>, as per the fast-keycodes hack applied
+" earlier in this vimrc to delete words in console mode. If that hack is ever
+" removed, this can be switched back to <Esc><BS> instead of <F16>
 let g:ctrlp_prompt_mappings = {
-  \ 'PrtDeleteWord()':      ['<Esc><BS>', '<c-w>'],
+  \ 'PrtDeleteWord()':      ['<F16>', '<c-w>'],
 \ }
 
 " Ack/Ag config
