@@ -15,11 +15,17 @@ Plug 'mileszs/ack.vim'
 Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-cucumber'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-vinegar'
 Plug 'bling/vim-airline'
 Plug 'sk1418/QFGrep'
 " To consider for later
 " Plug 'tpope/vim-rails'
+Plug 'dyng/ctrlsf.vim'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'matze/vim-move'
+Plug 'scrooloose/syntastic'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -131,9 +137,6 @@ set cmdheight=2
 " Display line numbers on the left
 set number
 
-" Quickly time out on keycodes, but never time out on mappings
-set notimeout ttimeout ttimeoutlen=200
-
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
@@ -182,14 +185,45 @@ set cursorcolumn
 " Full-screen help
 set helpheight=99999
 
+" Avoid delays on esc/keycodes, but never time out on mappings
+set notimeout ttimeout ttimeoutlen=0
+
+" Emacs shortcuts in VIM command mode (ex)
+cnoremap <C-a>  <Home>
+cnoremap <C-b>  <Left>
+cnoremap <C-f>  <Right>
+cnoremap <C-d>  <Delete>
+cnoremap <M-b>  <S-Left>
+cnoremap <M-f>  <S-Right>
+cnoremap <M-d>  <S-right><Delete>
+cnoremap <C-g>  <C-c>
+" Emacs shortcuts for <A-b> (back one word), <A-f> (forward one word) 
+" and <A-d> (delete next word) in VIM command mode (ex)
+" Works only in terms that has Alt send Escape sequence
+" see http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
+" for why the <F13> hack. Keeps Esc from waiting for other keys to close ex
+set <F13>=b
+set <F14>=f
+set <F15>=d
+cnoremap <F13> <S-Left>
+cnoremap <F14> <S-Right>
+cnoremap <F15> <S-right><Delete>
+
 " Fix deleting words with <A-BS> when terminal has Alt send Escape sequence
-" Without this, it exists normal or console mode
-inoremap <Esc><BS> <C-w>
-cnoremap <Esc><BS> <C-w>
+" see http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
+" for why the <F16> hack. Keeps Esc from waiting for other keys to close ex.
+set <F16>=
+inoremap <F16> <C-w>
+cnoremap <F16> <C-w>
 
 " Remap Escape character
 inoremap jj <ESC>
 
+" Show netrw as a tree by default
+let g:netrw_liststyle=3
+let g:netrw_banner = 0
+let g:netrw_winsize = 30
+let g:netrw_localrmdir="rm -r"
 
 " Show dotfiles in ctrlp
 let g:ctrlp_show_hidden = 1
@@ -239,3 +273,19 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#buffer_min_count = 3
+" vim-move config
+" for terms that send Alt as Escape sequence
+" see http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
+" for why the <F20> hack. Keeps Esc from waiting for other keys to exit visual
+set <F20>=j
+set <F21>=k
+vmap <F20> <Plug>MoveBlockDown
+vmap <F21> <Plug>MoveBlockUp
+nmap <F20> <Plug>MoveLineDown
+nmap <F21> <Plug>MoveLineUp
+
+" syntastic config
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+

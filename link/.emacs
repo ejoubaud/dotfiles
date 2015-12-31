@@ -9,8 +9,14 @@
 (defvar packages-to-install
   '(evil
     projectile
+    expand-region
     helm
     helm-projectile
+    json-mode
+    magit
+    puppet-mode
+    terraform-mode
+    yaml-mode
     zenburn-theme))
 
 (package-initialize)
@@ -29,11 +35,24 @@
 (xterm-mouse-mode 1)
 ;; Hide the toolbar in GUI
 (tool-bar-mode -1)
+;; Set window size
+(if (display-graphic-p)
+  (progn
+    (add-to-list 'default-frame-alist '(height . 60))
+    (add-to-list 'default-frame-alist '(width . 150))))
 ;; Show line numbers
 (global-linum-mode 1)
 
-;; Disable warning on opening symlinks to version-controlled files
+; Disable warning on opening symlinks to version-controlled files
 (setq vc-follow-symlinks t)
+
+;; Indentation
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq js-indent-level 2)
+
+;; Backup files in a dedicated directory
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 
 ;; Helm
 (helm-mode 1)
@@ -44,3 +63,9 @@
 ;; Projectile
 (projectile-global-mode)
 (helm-projectile-on)
+;; Expand-region
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+
+(provide '.emacs)
+;;; .emacs ends here
