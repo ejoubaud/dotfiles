@@ -11,6 +11,7 @@
     projectile
     helm
     helm-projectile
+    json-mode
     magit
     puppet-mode
     terraform-mode
