@@ -35,6 +35,11 @@
 (xterm-mouse-mode 1)
 ;; Hide the toolbar in GUI
 (tool-bar-mode -1)
+;; Set window size
+(if (display-graphic-p)
+  (progn
+    (add-to-list 'default-frame-alist '(height . 60))
+    (add-to-list 'default-frame-alist '(width . 150))))
 ;; Show line numbers
 (global-linum-mode 1)
 
