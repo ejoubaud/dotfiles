@@ -41,6 +41,9 @@
 ;; Disable warning on opening symlinks to version-controlled files
 (setq vc-follow-symlinks t)
 
+;; Backup files in a dedicated directory
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+
 ;; Helm
 (helm-mode 1)
 ;; Fuzzy matching on M-x
