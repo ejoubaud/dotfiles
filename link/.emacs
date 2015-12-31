@@ -9,6 +9,7 @@
 (defvar packages-to-install
   '(evil
     projectile
+    expand-region
     helm
     helm-projectile
     json-mode
@@ -49,3 +50,6 @@
 ;; Projectile
 (projectile-global-mode)
 (helm-projectile-on)
+;; Expand-region
+(global-set-key (kbd "C-=") 'er/expand-region)
+
