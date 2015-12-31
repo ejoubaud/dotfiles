@@ -11,6 +11,7 @@
     projectile
     helm
     helm-projectile
+    magit
     zenburn-theme))
 
 (package-initialize)
