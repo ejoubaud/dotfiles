@@ -24,6 +24,7 @@ Plug 'sk1418/QFGrep'
 Plug 'dyng/ctrlsf.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'matze/vim-move'
+Plug 'scrooloose/syntastic'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -281,4 +282,9 @@ vmap <F20> <Plug>MoveBlockDown
 vmap <F21> <Plug>MoveBlockUp
 nmap <F20> <Plug>MoveLineDown
 nmap <F21> <Plug>MoveLineUp
+
+" syntastic config
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
 
