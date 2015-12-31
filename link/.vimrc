@@ -267,8 +267,12 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#buffer_min_count = 3
 " vim-move config
 " for terms that send Alt as Escape sequence
-vmap <ESC>j <Plug>MoveBlockDown
-vmap <ESC>k <Plug>MoveBlockUp
-nmap <ESC>j <Plug>MoveLineDown
-nmap <ESC>k <Plug>MoveLineUp
+" see http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
+" for why the <F20> hack. Keeps Esc from waiting for other keys to exit visual
+set <F20>=j
+set <F21>=k
+vmap <F20> <Plug>MoveBlockDown
+vmap <F21> <Plug>MoveBlockUp
+nmap <F20> <Plug>MoveLineDown
+nmap <F21> <Plug>MoveLineUp
 
