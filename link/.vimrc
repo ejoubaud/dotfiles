@@ -136,9 +136,6 @@ set cmdheight=2
 " Display line numbers on the left
 set number
 
-" Quickly time out on keycodes, but never time out on mappings
-set notimeout ttimeout ttimeoutlen=200
-
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
@@ -186,6 +183,9 @@ set cursorcolumn
 
 " Full-screen help
 set helpheight=99999
+
+" Avoid delays on esc/keycodes, but never time out on mappings
+set notimeout ttimeout ttimeoutlen=0
 
 " Emacs shortcuts in VIM command mode (ex)
 cnoremap <C-a>  <Home>
