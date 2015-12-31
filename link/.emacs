@@ -43,7 +43,7 @@
 ;; Show line numbers
 (global-linum-mode 1)
 
-;; Disable warning on opening symlinks to version-controlled files
+; Disable warning on opening symlinks to version-controlled files
 (setq vc-follow-symlinks t)
 
 ;; Indentation
@@ -66,3 +66,6 @@
 ;; Expand-region
 (global-set-key (kbd "C-=") 'er/expand-region)
 
+
+(provide '.emacs)
+;;; .emacs ends here
