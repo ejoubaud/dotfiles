@@ -22,6 +22,7 @@ Plug 'sk1418/QFGrep'
 " Plug 'tpope/vim-rails'
 Plug 'dyng/ctrlsf.vim'
 Plug 'rbgrouleff/bclose.vim'
+Plug 'matze/vim-move'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -254,3 +255,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#buffer_min_count = 3
+" vim-move config
+" for terms that send Alt as Escape sequence
+vmap <ESC>j <Plug>MoveBlockDown
+vmap <ESC>k <Plug>MoveBlockUp
+nmap <ESC>j <Plug>MoveLineDown
+nmap <ESC>k <Plug>MoveLineUp
+
