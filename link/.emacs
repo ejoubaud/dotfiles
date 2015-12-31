@@ -46,6 +46,11 @@
 ;; Disable warning on opening symlinks to version-controlled files
 (setq vc-follow-symlinks t)
 
+;; Indentation
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq js-indent-level 2)
+
 ;; Backup files in a dedicated directory
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 
