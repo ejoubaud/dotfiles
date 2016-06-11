@@ -265,7 +265,9 @@ let g:ctrlp_abbrev = {
 let g:ctrlp_max_files=0
 let g:ctrlp_match_window = 'results:200'
 " Faster ctrlp with Ag
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+" Note: This breaks g:ctrlp_custom_ignore so we need to add ignores (.git,
+" etc.) in here
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore=.git -g ""'
 " Enable Python matcher for CtrlP
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " Set root to gem root when browsing a ruby gem
