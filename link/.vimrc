@@ -234,7 +234,6 @@ inoremap jj <ESC>
 " Show netrw as a tree by default
 let g:netrw_liststyle=3
 let g:netrw_banner = 0
-let g:netrw_winsize = 30
 let g:netrw_localrmdir="rm -r"
 
 " Show dotfiles in ctrlp
