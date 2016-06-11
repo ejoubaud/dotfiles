@@ -10,6 +10,7 @@
   '(evil
     projectile
     expand-region
+    evil-quickscope
     helm
     helm-projectile
     json-mode
@@ -63,7 +64,10 @@
 ;; Fuzzy matching on M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
 (setq helm-M-x-fuzzy-match t)
+;; Fuzzy matching on help (describe-function, describe-variable, among others)
+(setq helm-mode-fuzzy-match t)
 ;; Evil quickscope
+(global-evil-quickscope-always-mode 1)
 
 ;; Projectile
 (projectile-global-mode)
