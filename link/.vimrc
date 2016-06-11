@@ -228,6 +228,10 @@ set <F16>=
 inoremap <F16> <C-w>
 cnoremap <F16> <C-w>
 
+" Smarter C-n and C-p in console mode: same completion as up and down
+cnoremap <C-n>  <down>
+cnoremap <C-p>  <up>
+
 " Remap Escape character
 inoremap jj <ESC>
 
