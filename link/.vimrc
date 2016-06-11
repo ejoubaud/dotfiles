@@ -184,6 +184,16 @@ colorscheme solarized
 set cursorline
 set cursorcolumn
 
+" Change cursor style in insert mode
+" Note: These escape sequence are for iterm2 and may break other terms
+if empty($TMUX)
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+else
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+endif
+
 " Full-screen help
 set helpheight=99999
 
