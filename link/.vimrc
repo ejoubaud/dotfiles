@@ -23,7 +23,7 @@ Plug 'sk1418/QFGrep'
 " To consider for later
 " Plug 'tpope/vim-rails'
 Plug 'dyng/ctrlsf.vim'
-Plug 'rbgrouleff/bclose.vim'
+Plug 'moll/vim-bbye'
 Plug 'matze/vim-move'
 Plug 'scrooloose/syntastic'
 
