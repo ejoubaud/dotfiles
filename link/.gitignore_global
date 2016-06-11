@@ -66,3 +66,5 @@ composer.phar
 # cTags generation
 tags*
 
+# Emacs files
+\#*#
