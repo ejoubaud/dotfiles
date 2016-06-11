@@ -42,6 +42,8 @@
     (add-to-list 'default-frame-alist '(width . 150))))
 ;; Show line numbers
 (global-linum-mode 1)
+;; Don't show splash screen
+(setq inhibit-startup-message t)
 
 ; Disable warning on opening symlinks to version-controlled files
 (setq vc-follow-symlinks t)
