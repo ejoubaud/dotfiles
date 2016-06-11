@@ -50,6 +50,8 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 (setq js-indent-level 2)
+;; Delete trailing whitespaces
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; Backup files in a dedicated directory
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
@@ -59,6 +61,7 @@
 ;; Fuzzy matching on M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
 (setq helm-M-x-fuzzy-match t)
+;; Evil quickscope
 
 ;; Projectile
 (projectile-global-mode)
