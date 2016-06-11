@@ -235,6 +235,9 @@ cnoremap <C-p>  <up>
 " Remap Escape character
 inoremap jj <ESC>
 
+" Inremental search
+set incsearch
+
 " Show netrw as a tree by default
 let g:netrw_liststyle=3
 let g:netrw_banner = 0
