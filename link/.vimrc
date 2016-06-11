@@ -27,6 +27,7 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'moll/vim-bbye'
 Plug 'matze/vim-move'
 Plug 'scrooloose/syntastic'
+Plug 'easymotion/vim-easymotion'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -293,3 +294,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 
+" Easymotion config
+" Default prefix: <Leader> instead of <Leader><Leader>
+map <Leader> <Plug>(easymotion-prefix)
