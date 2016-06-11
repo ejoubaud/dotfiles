@@ -16,16 +16,19 @@ Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'bling/vim-airline'
 Plug 'sk1418/QFGrep'
-" To consider for later
-" Plug 'tpope/vim-rails'
 Plug 'dyng/ctrlsf.vim'
-Plug 'rbgrouleff/bclose.vim'
+Plug 'moll/vim-bbye'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'matze/vim-move'
 Plug 'scrooloose/syntastic'
+Plug 'easymotion/vim-easymotion'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -182,6 +185,16 @@ colorscheme solarized
 set cursorline
 set cursorcolumn
 
+" Change cursor style in insert mode
+" Note: These escape sequence are for iterm2 and may break other terms
+if empty($TMUX)
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+else
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+endif
+
 " Full-screen help
 set helpheight=99999
 
@@ -216,13 +229,19 @@ set <F16>=
 inoremap <F16> <C-w>
 cnoremap <F16> <C-w>
 
+" Smarter C-n and C-p in console mode: same completion as up and down
+cnoremap <C-n>  <down>
+cnoremap <C-p>  <up>
+
 " Remap Escape character
 inoremap jj <ESC>
+
+" Inremental search
+set incsearch
 
 " Show netrw as a tree by default
 let g:netrw_liststyle=3
 let g:netrw_banner = 0
-let g:netrw_winsize = 30
 let g:netrw_localrmdir="rm -r"
 
 " Show dotfiles in ctrlp
@@ -247,7 +266,9 @@ let g:ctrlp_abbrev = {
 let g:ctrlp_max_files=0
 let g:ctrlp_match_window = 'results:200'
 " Faster ctrlp with Ag
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+" Note: This breaks g:ctrlp_custom_ignore so we need to add ignores (.git,
+" etc.) in here
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore=.git -g ""'
 " Enable Python matcher for CtrlP
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " Set root to gem root when browsing a ruby gem
@@ -275,7 +296,10 @@ noremap <Leader>a :call ack#ShowResults()<CR>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#tabline#buffer_min_count = 3
+let g:airline#extensions#tabline#buffer_min_count = 2
+" Hide git branch (all extensions, including 'branch' are active by default)
+let g:airline_extensions = ['tabline']
+
 " vim-move config
 " for terms that send Alt as Escape sequence
 " see http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
@@ -289,6 +313,9 @@ nmap <F21> <Plug>MoveLineUp
 
 " syntastic config
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
 
+" Easymotion config
+" Default prefix: <Leader> instead of <Leader><Leader>
+map <Leader> <Plug>(easymotion-prefix)

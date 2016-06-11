@@ -57,3 +57,14 @@ Desktop.ini
 # NPM
 .npmignore
 
+# PHP
+composer.phar
+
+# Vim files
+*.sw[hijklmnop]
+
+# cTags generation
+tags*
+
+# Emacs files
+\#*#
