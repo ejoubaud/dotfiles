@@ -19,6 +19,7 @@ Plug 'tpope/vim-cucumber'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'bling/vim-airline'
 Plug 'sk1418/QFGrep'
@@ -276,7 +277,10 @@ noremap <Leader>a :call ack#ShowResults()<CR>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#tabline#buffer_min_count = 3
+let g:airline#extensions#tabline#buffer_min_count = 2
+" Hide git branch (all extensions, including 'branch' are active by default)
+let g:airline_extensions = ['tabline']
+
 " vim-move config
 " for terms that send Alt as Escape sequence
 " see http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
