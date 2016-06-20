@@ -30,3 +30,5 @@ alias ssh_config='subl3 ~/.ssh/config'
 # Docker
 alias docker-hosts=mark='"# DOCKER_MACHINE:" && sudo sed -i "" "/$mark/d" /etc/hosts && docker-machine ls -q | while read m; do echo "$(docker-machine ip $m)  $m.docker  ${mark} $m" | sudo tee -a /etc/hosts; done'
 
+# AWS Vault
+alias ave='aws-vault exec'
