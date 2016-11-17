@@ -61,10 +61,11 @@ Desktop.ini
 composer.phar
 
 # Vim files
-*.sw[hijklmnop]
+*.sw[a-z]
 
 # cTags generation
 tags*
 
 # Emacs files
 \#*#
+.#*

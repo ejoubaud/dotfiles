@@ -4,6 +4,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'sheerun/vim-polyglot'
+Plug 'jvirtanen/vim-octave'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
@@ -24,6 +25,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'bling/vim-airline'
 Plug 'sk1418/QFGrep'
 Plug 'dyng/ctrlsf.vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'moll/vim-bbye'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'matze/vim-move'
