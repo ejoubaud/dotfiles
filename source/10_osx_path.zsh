@@ -6,3 +6,7 @@
 # node
 path+=(/Users/ejoubaud/node_modules/.bin /usr/local/share/npm/bin)
 
+# go
+export GOPATH=~/.go
+export GOBIN=$GOPATH/bin
+path+=($GOBIN)

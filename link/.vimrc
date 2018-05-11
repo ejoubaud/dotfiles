@@ -15,6 +15,7 @@ Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'mileszs/ack.vim'
 Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-cucumber'
 Plug 'tpope/vim-endwise'
@@ -29,8 +30,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'moll/vim-bbye'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'matze/vim-move'
-Plug 'scrooloose/syntastic'
+Plug 'vim-syntastic/syntastic'
 Plug 'easymotion/vim-easymotion'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/vim-peekaboo'
+Plug 'styled-components/vim-styled-components'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -213,23 +217,14 @@ cnoremap <M-f>  <S-Right>
 cnoremap <M-d>  <S-right><Delete>
 cnoremap <C-g>  <C-c>
 " Emacs shortcuts for <A-b> (back one word), <A-f> (forward one word) 
-" and <A-d> (delete next word) in VIM command mode (ex)
+" and <A-d> (delete next word) and <A-BS> (delete previous word)
+" in VIM command mode (ex)
 " Works only in terms that has Alt send Escape sequence
 " see http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
-" for why the <F13> hack. Keeps Esc from waiting for other keys to close ex
-set <F13>=b
-set <F14>=f
-set <F15>=d
-cnoremap <F13> <S-Left>
-cnoremap <F14> <S-Right>
-cnoremap <F15> <S-right><Delete>
-
-" Fix deleting words with <A-BS> when terminal has Alt send Escape sequence
-" see http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
-" for why the <F16> hack. Keeps Esc from waiting for other keys to close ex.
-set <F16>=
-inoremap <F16> <C-w>
-cnoremap <F16> <C-w>
+cnoremap b <S-Left>
+cnoremap f <S-right>
+cnoremap d <S-right><Delete>
+cnoremap <BS> <C-w>
 
 " Smarter C-n and C-p in console mode: same completion as up and down
 cnoremap <C-n>  <down>
@@ -317,7 +312,12 @@ nmap <F21> <Plug>MoveLineUp
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
 " Easymotion config
 " Default prefix: <Leader> instead of <Leader><Leader>
 map <Leader> <Plug>(easymotion-prefix)
+
+" Peekaboo config
+let g:peekaboo_delay = 300
