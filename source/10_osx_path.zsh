@@ -12,4 +12,4 @@ path+=($GOBIN)
 export PATH="$HOME/.rbenv/shims:$PATH"
 
 #nodenv
-export PATH="$HOME/.nodenv/bin:$PATH"
+export PATH="$HOME/.nodenv/shims:$PATH"
