@@ -11,5 +11,5 @@ path+=($GOBIN)
 # rbenv
 export PATH="$HOME/.rbenv/shims:$PATH"
 
-#nodenv
+# nodenv
 export PATH="$HOME/.nodenv/bin:$PATH"
