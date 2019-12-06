@@ -2,14 +2,7 @@
 
 These are my dotfiles, essentially for Ruby with VIM.
 
-They're essentially a patchwork of existing frameworks:
-
-* [Ben Alman's dotfiles](https://github.com/cowboy/dotfiles) framework for easy storage and installation of the dotfiles and package manager
-* [Robby Russel's oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) for zsh awesomeness
-* [Janus VIM distribution](https://github.com/carlhuda/janus) for the collection of VIM plugin and mappings
-* Some custom tweaks
-
-Most of the informations about installation, customization and features can be found from the original projects.
+They're heavily based on the [Ben Alman's dotfiles](https://github.com/cowboy/dotfiles) framework. Most of the informations about installation, customization and features can be found from the original project.
 
 ## How does it work ?
 
@@ -50,30 +43,3 @@ Notes:
 sudo apt-get -qq update && sudo apt-get -qq upgrade && sudo apt-get -qq install curl && echo &&
 bash -c "$(curl -fsSL https://raw.github.com/ejoubaud/dotfiles/master/bin/dotfiles)"
 ```
-
-## The "init" step
-These things will be installed, but _only_ if they aren't already.
-
-### OS X
-* Homebrew
-  * git
-  * tree
-  * sl
-  * lesspipe
-  * id3tool
-  * nmap
-  * git-extras
-  * htop-osx
-  * apple-gcc42 (via [homebrew-dupes](https://github.com/Homebrew/homebrew-dupes/blob/master/apple-gcc42.rb))
-
-### Ubuntu
-* APT
-  * build-essential
-  * libssl-dev
-  * git-core
-  * tree
-  * sl
-  * id3tool
-  * nmap
-  * telnet
-  * htop
