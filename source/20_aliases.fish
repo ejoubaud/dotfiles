@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env fish
 
 # Git
 alias gs="git stash"
@@ -19,10 +19,7 @@ alias zs='zeus start'
 alias z='zeus'
 
 # Quick look
-alias ql='qlmanage -p "$@" >& /dev/null'
-
-# Docker
-alias docker-hosts=mark='"# DOCKER_MACHINE:" && sudo sed -i "" "/$mark/d" /etc/hosts && docker-machine ls -q | while read m; do echo "$(docker-machine ip $m)  $m.docker  ${mark} $m" | sudo tee -a /etc/hosts; done'
+alias ql='qlmanage -p "$argv" >& /dev/null'
 
 # AWS Vault
 alias ave='aws-vault exec'

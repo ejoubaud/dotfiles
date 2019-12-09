@@ -5,5 +5,10 @@ link/.ssh/id_*
 link/.ssh/known_hosts
 link/.vim/plugged
 link/.vim/.netrwhist
+link/.config/*
+!link/.config/fish
+link/.config/fish/*
+!link/.config/fish/fishfile
+!link/.config/fish/config.fish
 *LOCAL*
 .DS_Store
