@@ -3,7 +3,6 @@
 # Git
 alias gs="git stash"
 alias gbd="git build"
-alias gbw="git build-without-master"
 alias gsp="git smart-pull"
 alias gst="git status"
 alias gco="git checkout"
