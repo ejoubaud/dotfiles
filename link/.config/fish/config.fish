@@ -1,3 +1,6 @@
+# Remove default welcome message
+set fish_greeting
+
 # Source all files in ~/.dotfiles/source/
 function src
   if test "x$argv[1]" = x
