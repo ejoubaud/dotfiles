@@ -1,11 +1,16 @@
 #!/usr/bin/env fish
 
 # Git
+alias ga="git add"
+alias gb="git branch"
+alias gc="git commit"
 alias gs="git stash"
 alias gbd="git build"
 alias gsp="git smart-pull"
 alias gst="git status"
 alias gco="git checkout"
+alias gcm="git checkout master"
+alias gcd="git checkout develop"
 
 function current_branch
   set ref (git symbolic-ref HEAD 2> /dev/null); or \
