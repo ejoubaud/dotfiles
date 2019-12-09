@@ -5,6 +5,7 @@ alias gs="git stash"
 alias gbd="git build"
 alias gbw="git build-without-master"
 alias gsp="git smart-pull"
+alias gst="git status"
 
 # Bundler (Undo harmful from oh-my-zsh)
 alias zeus > /dev/null && unalias zeus
