@@ -6,6 +6,7 @@ alias gbd="git build"
 alias gbw="git build-without-master"
 alias gsp="git smart-pull"
 alias gst="git status"
+alias gco="git checkout"
 
 function current_branch
   set ref (git symbolic-ref HEAD 2> /dev/null); or \
