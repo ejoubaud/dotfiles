@@ -4,7 +4,7 @@ set fish_greeting
 # Source all files in ~/.dotfiles/source/
 function src
   if test "x$argv[1]" = x
-    for file in ~/.dotfiles/source/*
+    for file in ~/.dotfiles/source/*.fish
       source "$file"
     end
   else
@@ -16,7 +16,7 @@ function dotfiles
   ~/.dotfiles/bin/dotfiles $argv && src
 end
 
-status --is-interactive; and source (anyenv init -|psub)
-set -x PATH $PATH $GOPATH/bin
+# status --is-interactive; and source (anyenv init -|psub)
+# set -x PATH $PATH $GOPATH/bin
 
 src

@@ -36,13 +36,17 @@ plugins=(rails git ruby bundler)
 
 source $ZSH/oh-my-zsh.sh
 
+# anyenv
+eval "$(anyenv init -)"
+export PATH="$GOPATH/bin":$PATH
+
 # Customize to your needs...
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:$HOME/.dotfiles/bin
 
 # Source all files in ~/.dotfiles/source/
 function src() {
   if [[ "x$1" == x ]]; then
-    for file in ~/.dotfiles/source/*; do
+    for file in ~/.dotfiles/source/*.zsh; do
       source "$file"
     done
   else

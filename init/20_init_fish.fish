@@ -9,12 +9,12 @@ if [[ ! -f ~/.config/fish/functions/fisher.fish ]]; then
 fi
 
 # Switch to fish
-if [[ "$SHELL" != *fish ]]; then
-  bin=$(which fish)
-  # add to /etc/shells
-  grep -q $bin /etc/shells || echo $bin | sudo tee -a /etc/shells > /dev/null
-  # change default shell to fish
-  chsh -s $bin
-  # start running fish
-  fish
-fi
+# if [[ "$SHELL" != *fish ]]; then
+#   bin=$(which fish)
+#   # add to /etc/shells
+#   grep -q $bin /etc/shells || echo $bin | sudo tee -a /etc/shells > /dev/null
+#   # change default shell to fish
+#   chsh -s $bin
+#   # start running fish
+#   fish
+# fi
