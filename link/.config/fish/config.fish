@@ -16,4 +16,7 @@ function dotfiles
   ~/.dotfiles/bin/dotfiles $argv && src
 end
 
+status --is-interactive; and source (anyenv init -|psub)
+set -x PATH $PATH $GOPATH/bin
+
 src
