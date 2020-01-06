@@ -244,6 +244,12 @@ let g:netrw_localrmdir="rm -r"
 " Show dotfiles in ctrlp
 let g:ctrlp_show_hidden = 1
 
+" Max line length on Markdown files
+augroup auFileTypes
+  autocmd!
+  autocmd FileType markdown setlocal textwidth=100
+augroup end
+
 " Use case insensitive search, even with capital letters (because it's used by
 " CtrlP and messes with CamelCase searches)
 set ignorecase
