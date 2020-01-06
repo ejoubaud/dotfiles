@@ -11,6 +11,7 @@ alias gst="git status"
 alias gco="git checkout"
 alias gcm="git checkout master"
 alias gcd="git checkout develop"
+alias gcp="git cherry-pick"
 
 function current_branch
   set ref (git symbolic-ref HEAD 2> /dev/null); or \
@@ -25,6 +26,8 @@ alias zeus > /dev/null && unalias zeus
 
 # Rails
 alias rdm='rake db:migrate && rake db:test:prepare'
+alias bi='bundle install'
+alias be='bundle exec'
 
 # Zeus
 alias zr='zeus rspec'
