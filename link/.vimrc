@@ -8,7 +8,7 @@ Plug 'jvirtanen/vim-octave'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'unblevable/quick-scope'
 Plug 'kien/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
@@ -185,9 +185,8 @@ nnoremap <C-L> :nohl<CR><C-L>
 let mapleader = ","
 
 " Theme
-set background=dark
-let g:solarized_termtrans = 1
-colorscheme solarized
+set termguicolors
+colorscheme solarized8
 set cursorline
 set cursorcolumn
 
