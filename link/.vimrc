@@ -35,6 +35,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'styled-components/vim-styled-components'
+Plug 'dunckr/js_alternate.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -326,3 +327,6 @@ map <Leader> <Plug>(easymotion-prefix)
 
 " Peekaboo config
 let g:peekaboo_delay = 300
+
+" JS alternate
+nnoremap <leader>t :call js_alternate#run()<cr>
