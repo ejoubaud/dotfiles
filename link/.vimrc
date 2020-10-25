@@ -271,7 +271,7 @@ let g:ctrlp_match_window = 'results:200'
 " Faster ctrlp with Ag
 " Note: This breaks g:ctrlp_custom_ignore so we need to add ignores (.git,
 " etc.) in here
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore=.git -g ""'
+let g:ctrlp_user_command = 'rg --vimgrep --smart-case'
 " Enable Python matcher for CtrlP
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " Set root to gem root when browsing a ruby gem
