@@ -36,6 +36,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'styled-components/vim-styled-components'
 Plug 'dunckr/js_alternate.vim'
+Plug 'rhysd/vim-clang-format'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -330,3 +331,11 @@ let g:peekaboo_delay = 300
 
 " JS alternate
 nnoremap <leader>t :call js_alternate#run()<cr>
+
+" clang-format
+" autoformat on save
+let g:clang_format#auto_format = 1
+" autoformat only when .clang-format or _clang-format found in dir
+let g:clang_format#enable_fallback_style = 0
+" autoformat only for cpp files
+let g:clang_format#auto_filetypes = ['cpp']
