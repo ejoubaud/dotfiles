@@ -43,6 +43,8 @@ export PATH="$GOPATH/bin":$PATH
 # Customize to your needs...
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:$HOME/.dotfiles/bin
 
+export EDITOR=vim
+
 # Source all files in ~/.dotfiles/source/
 function src() {
   if [[ "x$1" == x ]]; then
