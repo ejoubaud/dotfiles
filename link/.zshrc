@@ -36,6 +36,9 @@ plugins=(rails git ruby bundler kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
+# needed to add lazygit config to dotfiles
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # anyenv
 eval "$(anyenv init -)"
 export PATH="$GOPATH/bin":$PATH
