@@ -10,5 +10,7 @@ link/.config/*
 link/.config/fish/*
 !link/.config/fish/fishfile
 !link/.config/fish/config.fish
+!link/.config/lazygit
+link/.config/lazygit/state.yml
 *LOCAL*
 .DS_Store
