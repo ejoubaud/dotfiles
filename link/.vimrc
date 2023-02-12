@@ -38,6 +38,9 @@ Plug 'styled-components/vim-styled-components'
 Plug 'dunckr/js_alternate.vim'
 Plug 'rhysd/vim-clang-format'
 
+" switch to term and lazygit
+Plug 'voldikss/vim-floaterm'
+
 " Add plugins to &runtimepath
 call plug#end()
 
@@ -342,3 +345,9 @@ let g:clang_format#auto_format = 1
 let g:clang_format#enable_fallback_style = 0
 " autoformat only for cpp files
 let g:clang_format#auto_filetypes = ['cpp']
+
+" floaterm
+let g:floaterm_height = 0.95
+let g:floaterm_width = 0.95
+command Glg FloatermNew lazygit
+
