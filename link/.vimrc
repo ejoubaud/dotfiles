@@ -151,6 +151,9 @@ set number
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
+" Default to good folds for programming
+set foldmethod=indent
+set foldlevelstart=99
 
 "------------------------------------------------------------
 " Indentation options {{{1
