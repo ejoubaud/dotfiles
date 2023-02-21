@@ -1,5 +1,6 @@
 gui:
-  windowSize: half
+  windowSize: normal
+  scrollHeight: 8
 git:
   paging:
     colorArg: always
