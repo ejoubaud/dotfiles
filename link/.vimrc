@@ -30,13 +30,15 @@ Plug 'airblade/vim-gitgutter'
 Plug 'moll/vim-bbye'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'matze/vim-move'
-Plug 'vim-syntastic/syntastic'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'styled-components/vim-styled-components'
 Plug 'dunckr/js_alternate.vim'
 Plug 'rhysd/vim-clang-format'
+
+" code completion in rust and others, ensure nodejs is installed:
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " switch to term and lazygit
 Plug 'voldikss/vim-floaterm'
@@ -321,12 +323,6 @@ vmap <F21> <Plug>MoveBlockUp
 nmap <F20> <Plug>MoveLineDown
 nmap <F21> <Plug>MoveLineUp
 
-" syntastic config
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_check_on_open = 1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
 " Easymotion config
 " Default prefix: <Leader> instead of <Leader><Leader>
@@ -345,6 +341,11 @@ let g:clang_format#auto_format = 1
 let g:clang_format#enable_fallback_style = 0
 " autoformat only for cpp files
 let g:clang_format#auto_filetypes = ['cpp']
+
+" coc
+" for rust, you need rls: rustup component add rls rust-analysis rust-src
+" for ruby, you need solargraph: gem install solargraph; solargraph config
+let g:coc_global_extensions = ['coc-rust-analyzer', 'coc-solargraph', 'coc-snippets']
 
 " floaterm
 let g:floaterm_height = 0.95
