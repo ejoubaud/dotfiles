@@ -12,6 +12,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'unblevable/quick-scope'
 Plug 'kien/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
+Plug 'd11wtq/ctrlp_bdelete.vim'
 Plug 'mileszs/ack.vim'
 Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-fugitive'
@@ -23,6 +24,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-repeat'
 Plug 'bling/vim-airline'
 Plug 'sk1418/QFGrep'
 Plug 'dyng/ctrlsf.vim'
@@ -35,6 +37,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'styled-components/vim-styled-components'
 Plug 'dunckr/js_alternate.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'prettier/vim-prettier'
 Plug 'rhysd/vim-clang-format'
 
 " code completion in rust and others, ensure nodejs is installed:
@@ -42,6 +46,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " switch to term and lazygit
 Plug 'voldikss/vim-floaterm'
+Plug 'github/copilot.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -334,6 +339,12 @@ let g:peekaboo_delay = 300
 " JS alternate
 nnoremap <leader>t :call js_alternate#run()<cr>
 
+" vim-prettier: autoformat on projects with a config file
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#autoformat_config_present = 1
+" fix conflict with vim-polyglot, setting typefile to typescriptreact
+" while vim-prettier expected typescript to trigger autoformat save hook
+autocmd BufWritePre *.ts,*.tsx call prettier#Autoformat()
 " clang-format
 " autoformat on save
 let g:clang_format#auto_format = 1
@@ -342,6 +353,8 @@ let g:clang_format#enable_fallback_style = 0
 " autoformat only for cpp files
 let g:clang_format#auto_filetypes = ['cpp']
 
+" go tabs
+autocmd BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 " coc
 " for rust, you need rls: rustup component add rls rust-analysis rust-src
 " for ruby, you need solargraph: gem install solargraph; solargraph config
