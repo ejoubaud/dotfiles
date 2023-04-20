@@ -342,9 +342,13 @@ nnoremap <leader>t :call js_alternate#run()<cr>
 " vim-prettier: autoformat on projects with a config file
 let g:prettier#autoformat_require_pragma = 0
 let g:prettier#autoformat_config_present = 1
+" Ignore vim-prettier's default settings (e.g. tab-width=4) when a config file
+" is found
+let g:prettier#config#config_precedence = 'prefer-file'
 " fix conflict with vim-polyglot, setting typefile to typescriptreact
 " while vim-prettier expected typescript to trigger autoformat save hook
 autocmd BufWritePre *.ts,*.tsx call prettier#Autoformat()
+
 " clang-format
 " autoformat on save
 let g:clang_format#auto_format = 1
