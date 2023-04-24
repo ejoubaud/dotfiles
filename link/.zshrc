@@ -42,9 +42,14 @@ source $ZSH/oh-my-zsh.sh
 # needed to add lazygit config to dotfiles
 export XDG_CONFIG_HOME="$HOME/.config"
 
-# anyenv
-eval "$(anyenv init -)"
-export PATH="$GOPATH/bin":$PATH
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# anyenv                                                                        █
+# eval "$(anyenv init -)"                                                         █
+# export PATH="$GOPATH/bin":$PATH
+# rbenv
+# eval "$(rbenv init - zsh)"
 
 # Customize to your needs...
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:$HOME/.dotfiles/bin
