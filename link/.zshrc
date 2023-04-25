@@ -45,6 +45,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # anyenv                                                                        █
 # eval "$(anyenv init -)"                                                         █
 # export PATH="$GOPATH/bin":$PATH
