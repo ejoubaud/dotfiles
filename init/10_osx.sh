@@ -3,7 +3,7 @@
 # OSX-only stuff. Abort if not OSX.
 [[ "$OSTYPE" =~ ^darwin ]] || return 1
 
-RECIPES=(git tmux tree sl ctags ag lazygit git-delta asdf gh)
+RECIPES=(git tmux tree sl ctags ag lazygit git-delta asdf gh vim)
 
 # Some tools look for XCode, even though they don't need it.
 # https://github.com/joyent/node/issues/3681
