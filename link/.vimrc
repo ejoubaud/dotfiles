@@ -10,9 +10,8 @@ Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'lifepillar/vim-solarized8'
 Plug 'unblevable/quick-scope'
-Plug 'kien/ctrlp.vim'
-Plug 'FelikZ/ctrlp-py-matcher'
-Plug 'd11wtq/ctrlp_bdelete.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'vim-scripts/ZoomWin'
 Plug 'tpope/vim-fugitive'
@@ -255,48 +254,15 @@ let g:netrw_liststyle=3
 let g:netrw_banner = 0
 let g:netrw_localrmdir="rm -r"
 
-" Show dotfiles in ctrlp
-let g:ctrlp_show_hidden = 1
-
 " Max line length on Markdown files
 augroup auFileTypes
   autocmd!
   autocmd FileType markdown setlocal textwidth=100
 augroup end
 
-" Use case insensitive search, even with capital letters (because it's used by
-" CtrlP and messes with CamelCase searches)
+
+" case-insensitive search by default
 set ignorecase
-set nosmartcase
-" Turn Class::Name into Class/Name into ctrlp search
-let g:ctrlp_abbrev = {
-  \ 'gmode': 'i',
-  \ 'abbrevs': [
-    \ {
-      \ 'pattern': '::',
-      \ 'expanded': '/',
-      \ 'mode': 'pfrz',
-    \ },
-  \ ]
-\ }
-" Fix missing files in ctrlp
-let g:ctrlp_max_files=0
-let g:ctrlp_match_window = 'results:200'
-" Faster ctrlp with Ag
-" Note: This breaks g:ctrlp_custom_ignore so we need to add ignores (.git,
-" etc.) in here
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore=.git -g ""'
-" Enable Python matcher for CtrlP
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-" Set root to gem root when browsing a ruby gem
-let g:ctrlp_root_markers = [ '*.gemspec' ]
-" Fix <A-BS> closing Ctrlp prompt
-" The <F16> stands for <Esc><BS>, as per the fast-keycodes hack applied
-" earlier in this vimrc to delete words in console mode. If that hack is ever
-" removed, this can be switched back to <Esc><BS> instead of <F16>
-let g:ctrlp_prompt_mappings = {
-  \ 'PrtDeleteWord()':      ['<F16>', '<c-w>'],
-\ }
 
 " Ack/Ag config
 if executable('ag')
