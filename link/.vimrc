@@ -260,6 +260,9 @@ augroup auFileTypes
   autocmd FileType markdown setlocal textwidth=100
 augroup end
 
+" fzf
+nmap <C-P> :GitFiles --others --exclude-standard --cached<CR>
+nmap <C-F> :Buffers<CR>
 
 " case-insensitive search by default
 set ignorecase
