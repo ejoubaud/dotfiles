@@ -37,9 +37,8 @@ bash -c "$(curl -fsSL https://raw.github.com/ejoubaud/dotfiles/master/bin/dotfil
 Notes:
 
 * You need to be an administrator (for `sudo`).
-* If APT hasn't been updated or upgraded recently, it will probably be a few minutes before you see anything.
+* Installs software with homebrew, not apt
 
 ```sh
-sudo apt-get -qq update && sudo apt-get -qq upgrade && sudo apt-get -qq install curl && echo &&
 bash -c "$(curl -fsSL https://raw.github.com/ejoubaud/dotfiles/master/bin/dotfiles)"
 ```
