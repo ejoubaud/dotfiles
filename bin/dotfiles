@@ -2,7 +2,7 @@
 
 # CONSTANTS
 
-REPO=git@github.com:ejoubaud/dotfiles.git
+REPO=https://github.com/ejoubaud/dotfiles.git
 
 
 echo 'Dotfiles - Emmanuel Joubaud'
