@@ -30,7 +30,9 @@ alias zshconfig="vim ~/.zshrc"
 # COMPLETION_WAITING_DOTS="true"
 
 # homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+BREW_PREFIX=/opt/homebrew
+[[ -d /home/linuxbrew/.linuxbrew ]] && BREW_PREFIX=/home/linuxbrew/.linuxbrew
+eval "$($BREW_PREFIX/bin/brew shellenv)"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -43,7 +45,7 @@ source $ZSH/oh-my-zsh.sh
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+. $BREW_PREFIX/opt/asdf/libexec/asdf.sh
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

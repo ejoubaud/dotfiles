@@ -8,6 +8,9 @@ RECIPES=(git tmux tree sl ctags the_silver_searcher lazygit git-delta asdf gh vi
 if [[ ! "$(type -P brew)" ]]; then
   e_header "Installing Homebrew"
   true | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  BREW_PREFIX=/opt/homebrew
+  [[ -d /home/linuxbrew/.linuxbrew ]] && BREW_PREFIX=/home/linuxbrew/.linuxbrew
+  eval "$($BREW_PREFIX/bin/brew shellenv)"
 fi
 
 if [[ "$(type -P brew)" ]]; then
