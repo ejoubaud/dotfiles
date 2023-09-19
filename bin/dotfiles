@@ -2,7 +2,8 @@
 
 # CONSTANTS
 
-REPO=https://github.com/ejoubaud/dotfiles.git
+REPO=ejoubaud/dotfiles
+REPO_URL=https://github.com/$REPO.git
 
 
 echo 'Dotfiles - Emmanuel Joubaud'
@@ -12,7 +13,7 @@ if [[ "$1" == "-h" || "$1" == "--help" ]]; then cat <<HELP
 Usage: $(basename "$0")
 
 See the README for documentation.
-https://github.com/ejoubaud/dotfiles
+https://github.com/$REPO
 Forked from https://github.com/cowboy/dotfiles
 HELP
 exit; fi
@@ -135,25 +136,17 @@ fi
 
 # If Git is not installed...
 if [[ ! "$(type -P git)" ]]; then
-  # OSX
-  if [[ "$OSTYPE" =~ ^darwin ]]; then
-    # It's easiest to get Git via Homebrew, so get that first.
-    if [[ ! "$(type -P brew)" ]]; then
-      e_header "Installing Homebrew"
-      true | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    fi
-    # If Homebrew was installed, install Git.
-    if [[ "$(type -P brew)" ]]; then
-      e_header "Updating Homebrew"
-      brew update
-      e_header "Installing Git"
-      brew install git
-    fi
-  # Ubuntu.
-  elif [[ "$(cat /etc/issue 2> /dev/null)" =~ Linux ]]; then
-    # Git is fairly easy.
+  # If Homebrew is not installed
+  if [[ ! "$(type -P brew)" ]]; then
+    e_header "Installing Homebrew"
+    true | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
+
+  if [[ "$(type -P brew)" ]]; then
+    e_header "Updating Homebrew"
+    brew update
     e_header "Installing Git"
-    sudo apt-get -qq install git-core
+    brew install git
   fi
 fi
 
@@ -173,6 +166,7 @@ if [[ ! -d ~/.dotfiles ]]; then
   e_header "Downloading dotfiles"
   git clone --recursive $REPO ~/.dotfiles
   cd ~/.dotfiles
+  git remote set-url origin git@github.com:ejoubaud/dotfiles.git
 else
   # Make sure we have the latest files.
   e_header "Updating dotfiles"

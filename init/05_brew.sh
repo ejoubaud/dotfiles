@@ -4,14 +4,7 @@
 
 RECIPES=(git tmux tree sl ctags ag lazygit git-delta asdf gh vim fzf)
 
-# Some tools look for XCode, even though they don't need it.
-# https://github.com/joyent/node/issues/3681
-# https://github.com/mxcl/homebrew/issues/10245
-if [[ ! -d "$('xcode-select' -print-path 2>/dev/null)" ]]; then
-  sudo xcode-select -switch /usr/bin
-fi
-
-# Install Homebrew.
+# Install Homebrew
 if [[ ! "$(type -P brew)" ]]; then
   e_header "Installing Homebrew"
   true | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
