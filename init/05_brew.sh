@@ -2,7 +2,7 @@
 
 # Start by installing homebrew, whether on MacOS or Linux
 
-RECIPES=(git tmux tree sl ctags ag lazygit git-delta asdf gh vim fzf)
+RECIPES=(git tmux tree sl ctags ag lazygit git-delta asdf gh   vim fzf)
 
 # Install Homebrew
 if [[ ! "$(type -P brew)" ]]; then

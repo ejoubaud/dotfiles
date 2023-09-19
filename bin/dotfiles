@@ -164,9 +164,9 @@ if [[ ! -d ~/.dotfiles ]]; then
   new_dotfiles_install=1
   # ~/.dotfiles doesn't exist? Clone it!
   e_header "Downloading dotfiles"
-  git clone --recursive $REPO ~/.dotfiles
+  git clone --recursive $REPO_URL ~/.dotfiles
   cd ~/.dotfiles
-  git remote set-url origin git@github.com:ejoubaud/dotfiles.git
+  git remote set-url origin git@github.com:$REPO.git
 else
   # Make sure we have the latest files.
   e_header "Updating dotfiles"
