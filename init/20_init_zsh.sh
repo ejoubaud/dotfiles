@@ -9,4 +9,4 @@ AUTOSUGGESTION_DIR="$CUSTOM_DIR/plugins/zsh-autosuggestions"
 [[ -d "$AUTOSUGGESTION_DIR" ]] || git clone https://github.com/zsh-users/zsh-autosuggestions "$AUTOSUGGESTION_DIR"
 
 # Setup zsh as the default shell
-[[ $SHELL == */zsh ]] || sudo chsh -s $(which zsh)
+[[ $SHELL == */zsh ]] || sudo chsh -s $(which zsh) $(whoami)
