@@ -22,7 +22,6 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-repeat'
 Plug 'bling/vim-airline'
 Plug 'sk1418/QFGrep'
@@ -39,6 +38,8 @@ Plug 'dunckr/js_alternate.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'prettier/vim-prettier'
 Plug 'rhysd/vim-clang-format'
+Plug 'lambdalisue/fern.vim', { 'branch': 'main' }
+Plug 'lambdalisue/fern-hijack.vim'
 
 " code completion in rust and others, ensure nodejs is installed:
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -337,4 +338,22 @@ let g:coc_global_extensions = ['coc-rust-analyzer', 'coc-solargraph', 'coc-snipp
 let g:floaterm_height = 0.95
 let g:floaterm_width = 0.95
 command Glg FloatermNew lazygit
+
+" fern.vim
+noremap - :Fern . -reveal=%<CR>
+" show hidden files
+let g:fern#default_hidden = 1
+" fix tmux-vim-navigator mappings in fern
+function! s:init_fern() abort
+  nmap <buffer><nowait> <C-j> :<C-U>TmuxNavigateDown<cr>
+  nmap <buffer><nowait> <C-k> :<C-U>TmuxNavigateUp<cr>
+  nmap <buffer><nowait> <C-h> :<C-U>TmuxNavigateLeft<cr>
+  nmap <buffer><nowait> <C-l> :<C-U>TmuxNavigateRight<cr>
+  nmap <C-P> :GitFiles --others --exclude-standard --cached<CR>
+  nmap <C-F> :Buffers<CR>
+endfunction
+augroup fern-custom
+  autocmd! *
+  autocmd FileType fern call s:init_fern()
+augroup END
 
