@@ -21,3 +21,6 @@ alias ql='qlmanage -p "$@" >& /dev/null'
 
 # AWS Vault	
 alias ave='aws-vault exec'
+
+# Lazygit
+alias lg=lazygit
