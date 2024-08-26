@@ -273,7 +273,7 @@ set ignorecase
 
 " Ack/Ag config
 if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+  let g:ackprg = 'ag --vimgrep --hidden --ignore .git'
 endif
 " Quit auto-opening first result on search
 cabbrev Ack Ack!
