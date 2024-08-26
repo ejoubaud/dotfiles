@@ -336,6 +336,23 @@ autocmd BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 " for rust, you need rls: rustup component add rls rust-analysis rust-src
 " for ruby, you need solargraph: gem install solargraph; solargraph config
 let g:coc_global_extensions = ['coc-rust-analyzer', 'coc-solargraph', 'coc-snippets']
+" auto-install solargraph gem on ruby upgrades
+" Function to check and install solargraph gem if not installed
+function! CheckAndInstallSolargraph()
+  let l:check_gem = system('gem list solargraph -i')
+  if v:shell_error != 0
+    echo "Installing solargraph gem..."
+    let l:install_gem = system('gem install solargraph')
+    if v:shell_error == 0
+      echo "Solargraph gem installed successfully."
+    else
+      echo "Failed to install solargraph gem."
+    endif
+  else
+    echo "Solargraph gem is already installed."
+  endif
+endfunction
+autocmd VimEnter * call CheckAndInstallSolargraph()
 
 " floaterm
 let g:floaterm_height = 0.95
