@@ -38,6 +38,7 @@ Plug 'dunckr/js_alternate.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'prettier/vim-prettier'
 Plug 'rhysd/vim-clang-format'
+Plug 'mcchrish/nnn.vim'
 Plug 'lambdalisue/fern.vim', { 'branch': 'main' }
 Plug 'lambdalisue/fern-hijack.vim'
 
@@ -338,6 +339,9 @@ let g:coc_global_extensions = ['coc-rust-analyzer', 'coc-solargraph', 'coc-snipp
 let g:floaterm_height = 0.95
 let g:floaterm_width = 0.95
 command Glg FloatermNew lazygit
+
+" nnn
+" let g:nnn#replace_netrw = 1
 
 " fern.vim
 noremap - :Fern . -reveal=%<CR>
