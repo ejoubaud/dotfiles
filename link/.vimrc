@@ -42,6 +42,7 @@ Plug 'mcchrish/nnn.vim'
 Plug 'lambdalisue/fern.vim', { 'branch': 'main' }
 Plug 'lambdalisue/fern-hijack.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'hashivim/vim-terraform'
 
 " code completion in rust and others, ensure nodejs is installed:
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -361,6 +362,10 @@ augroup fern-custom
   autocmd! *
   autocmd FileType fern call s:init_fern()
 augroup END
+
+" vim-terraform
+let g:terraform_align = 1
+let g:terraform_fmt_on_save = 1
 
 " vim-go
 let g:go_metalinter_autosave = 1
